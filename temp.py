@@ -1,8 +1,13 @@
+import sys
+
 # Temperature Classification Program
 
-# Accept temperatures from user input
-temperatures = input("Enter temperatures separated by space: ")
-temperatures = [float(temp) for temp in temperatures.split()]
+# Accept temperatures from command-line arguments
+if len(sys.argv) < 2:
+    print("Please provide temperatures as command-line arguments.")
+    sys.exit(1)
+
+temperatures = [float(temp) for temp in sys.argv[1:]]
 
 # Classify temperatures
 for temp in temperatures:
